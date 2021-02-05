@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1AFFFFFF"
     android:gravity="bottom"
     app:umanoDragView="@id/dragView"
     app:umanoOverlay="false"
@@ -42,6 +41,7 @@
         android:id="@+id/dragView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#E6FFFFFF"
         android:orientation="vertical">
 
         <TextView
