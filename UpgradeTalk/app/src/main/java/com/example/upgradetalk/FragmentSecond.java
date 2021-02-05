@@ -4,9 +4,15 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +29,11 @@ public class FragmentSecond extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
+
+            + "/test";
+
 
     public FragmentSecond() {
         // Required empty public constructor
@@ -59,6 +70,26 @@ public class FragmentSecond extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_second, container, false);
+
+
+
+        return rootView;
     }
+
+    public void f() {
+        String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
+
+                + "/test"; //파일 위치
+
+        File f = new File(path);
+        File[] files = f.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.getName().toLowerCase(Locale.US).endsWith(".jpg"); //확장자
+            }
+        });
+
+    }
+
 }

@@ -79,7 +79,6 @@ public class FragmentFirst extends Fragment {
             @Override
             public void onClick(View v) {
                 String read = ReadTextFile(filePath);
-
             }
         });
         return rootView;
